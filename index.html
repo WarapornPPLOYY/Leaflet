@@ -1,0 +1,98 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My first Leaflet</title>
+  <!---Link leaflet css and javascript--->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+  <body bgcolor = '#F5FFFA'>
+  <h1><center><div style="border: 8px solid #36648B ;background-color:#BCD2EE">𝕃𝕒𝕟𝕕𝕞𝕒𝕣𝕜 𝕚𝕟 ℙ𝕙𝕦𝕜𝕖𝕥🏖️</div></center></h1>
+
+
+  <center><div id="map" style="width: 800px; height: 600px"></div></center>
+  <!--- set center and Link map--->
+<script>
+
+ var map = L.map('map').setView([7.891462533338866, 98.32004964152252],12);
+  mapLink ='<a href="http://openstreetmap.org">OpenStreetMap</a>';
+  L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: 'Map data &copy; ' + mapLink,
+     maxZoom: 18,
+    }).addTo(map);
+    var greenIcon = L.icon({
+    iconUrl: 'https://cdn.pixabay.com/photo/2012/04/26/12/03/boat-42307_1280.png',
+
+
+    iconSize:     [50, 50], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    var marker = L.marker([7.761996482998684, 98.30535942569276],
+  {
+    icon: greenIcon,
+    draggable:true,
+    title:'แหลมพรหมเทพ',
+    opacity:1.5
+  }
+)
+  .addTo(map)
+  .bindPopup("<b>แหลมพรหมเทพ</b>")
+  .openPopup();
+
+  var marker = L.marker([7.886968419423437, 98.38637005124104],
+  {
+  icon: greenIcon,
+  draggable:true,
+  title:'เมืองเก่าภูเก็ต',
+  opacity:1.5
+  }
+  )
+  .addTo(map)
+  .bindPopup("<b>เมืองเก่าภูเก็ต</b>")
+  .openPopup();
+
+  var marker = L.marker([7.783233723493111, 98.29755358424046],
+  {
+  icon: greenIcon,
+  draggable:true,
+  title:'ผาหินดำ',
+  opacity:1.5
+  }
+  )
+  .addTo(map)
+  .bindPopup("<b>จุดชมวิวผาหินดำ</b>")
+  .openPopup();
+
+  var marker = L.marker([7.827772444921043, 98.31285365478286],
+  {
+  icon: greenIcon,
+  draggable:true,
+  title:'วัดพระใหญ่ ยอดเขานาคเกิด',
+  opacity:1.5
+  }
+  )
+  .addTo(map)
+  .bindPopup("<b>วัดพระใหญ่ ยอดเขานาคเกิด</b>")
+  .openPopup();
+
+  var marker = L.marker([7.897785245464893, 98.29571537862388],
+  {
+  icon: greenIcon,
+  draggable:true,
+  title:'หาดป่าตอง',
+  opacity:1.5
+  }
+  )
+  .addTo(map)
+  .bindPopup("<b>หาดป่าตอง</b>")
+  .openPopup();
+
+</script>
+</body>
+</html>
